@@ -1,0 +1,4 @@
+## Description
+Reconstruction of Arctic sea ice from 1850 to 2013 from the [NSIDC](http://nsidc.org/about/overview). The data in netCDF4 format is available [here](https://nsidc.org/data/g10010), and consists of monthly sea ice concentration measurements and their source at 1/4 degree latitude and longitude increments. Dates are stored as the number of days since 2001-01-01. Please see [description.pdf](https://github.com/UCIDataScienceInitiative/Climate_Hackathon/blob/master/arctic_sea_ice/description.pdf) for a detailed description of the data.
+
+Also see the [R code](https://github.com/UCIDataScienceInitiative/Climate_Hackathon/blob/master/arctic_sea_ice/format.R) for an explanation of how the netCDF4 file format works and how to read/format the data for an analysis if not farmiliar with this format.
