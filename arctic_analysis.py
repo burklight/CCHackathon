@@ -5,11 +5,7 @@ import pandas as pd
 import numpy as np
 import xarray as xr
 import netCDF4
-
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
 
 
 dpm = {'noleap': [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
@@ -100,11 +96,11 @@ def main():
             add_colorbar=True, extend='both')
 
         ds_unweighted['seaice_conc'].sel(season=season).where(notnull).plot.pcolormesh(
-            ax=axes[i, 0], vmin=-30, vmax=30, cmap='Spectral_r',
+            ax=axes[i, 1], vmin=-30, vmax=30, cmap='Spectral_r',
             add_colorbar=True, extend='both')
 
         ds_diff['seaice_conc'].sel(season=season).where(notnull).plot.pcolormesh(
-            ax=axes[i, 0], vmin=-30, vmax=30, cmap='RdBu_r',
+            ax=axes[i, 2], vmin=-0.1, vmax=0.1, cmap='RdBu_r',
             add_colorbar=True, extend='both')
 
         axes[i, 0].set_ylabel(season)
@@ -124,6 +120,7 @@ def main():
     plt.tight_layout()
     fig.suptitle('Seasonal Concentration', fontsize=16, y=1.02)
     fig.savefig('./seasonal_conc.png')
+    plt.show()
     plt.close(fig)
 
 
