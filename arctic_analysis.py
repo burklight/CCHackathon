@@ -92,11 +92,11 @@ def main():
     fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(14,12))
     for i, season in enumerate(('DJF', 'MAM', 'JJA', 'SON')):
         ds_weighted['seaice_conc'].sel(season=season).where(notnull).plot.pcolormesh(
-            ax=axes[i, 0], vmin=-30, vmax=30, cmap='Spectral_r',
+            ax=axes[i, 0], vmin=0, vmax=100, cmap='Spectral_r',
             add_colorbar=True, extend='both')
 
         ds_unweighted['seaice_conc'].sel(season=season).where(notnull).plot.pcolormesh(
-            ax=axes[i, 1], vmin=-30, vmax=30, cmap='Spectral_r',
+            ax=axes[i, 1], vmin=0, vmax=100, cmap='Spectral_r',
             add_colorbar=True, extend='both')
 
         ds_diff['seaice_conc'].sel(season=season).where(notnull).plot.pcolormesh(
