@@ -1,16 +1,8 @@
 import netCDF4
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from collections import Counter
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-from mpl_toolkits.mplot3d import Axes3D
-from dtw import dtw
 import sklearn.cluster
 import sklearn
-import seaborn as sns
-sns.set(color_codes=True)
 
 data = netCDF4.Dataset('data/G10010_SIBT1850_v1.1.nc', 'r', format='NETCDF4')
 
@@ -53,7 +45,8 @@ def compute_clusters(timestep, latitude, longitude, seaice_con):
                                 p=None,
                                 n_jobs=1)
     """
-    clustering_algorithm = sklearn.cluster.SpectralClustering(n_clusters=100, n_jobs=-1)
+    #clustering_algorithm = sklearn.cluster.SpectralClustering(n_clusters=10, n_jobs=-1)
+    clustering_algorithm = sklearn.cluster.SpectralClustering(n_clusters=10, n_jobs=-1)
 
     return clustering_algorithm.fit_predict(X=X)
 
