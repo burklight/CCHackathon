@@ -124,7 +124,5 @@ def main():
     plt.close(fig)
 
 
-
-
 if __name__ == '__main__':
     main()
